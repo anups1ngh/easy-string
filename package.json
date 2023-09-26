@@ -1,6 +1,6 @@
 {
   "name": "stringbuddy",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,5 +8,7 @@
   },
   "author": "Anup Singh",
   "license": "ISC",
-  "keywords": ["string"]
+  "keywords": [
+    "string"
+  ]
 }
