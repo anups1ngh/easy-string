@@ -12,6 +12,7 @@ npm i stringbuddy
 
 ## Usages
 
+```js
 const { easyString } = require('stringbuddy');
 
 // Create an EasyString instance
@@ -25,11 +26,12 @@ console.log(myString.reverse()); // "!dlroW ,olleH"
 console.log(myString.isPalindrome()); // false
 
 console.log(myString.isUpperCase()); // false
-
+```
 
 ## Methods
 
 EasyString provides a wide range of methods to manipulate and validate strings. Here are some of the available methods:
+
 
 setString(string): Set the internal string to the provided value.
 
