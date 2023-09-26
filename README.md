@@ -7,12 +7,12 @@ EasyString is a JavaScript utility class that provides a wide range of methods t
 You can install EasyString via npm:
 
 ```bash
-npm install easy-string-utils
+npm i stringbuddy
 ```
 
 ## Usages
 
-const { easyString } = require('easy-string-utils');
+const { easyString } = require('stringbuddy');
 
 // Create an EasyString instance
 
