@@ -10,5 +10,8 @@
   "license": "ISC",
   "keywords": [
     "string"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anups1ngh/easy-string.git"}
 }
