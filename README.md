@@ -15,11 +15,15 @@ npm install easy-string-utils
 const { easyString } = require('easy-string-utils');
 
 // Create an EasyString instance
+
 const myString = new easyString('Hello, World!');
 
 // Example usage of EasyString methods
+
 console.log(myString.reverse()); // "!dlroW ,olleH"
+
 console.log(myString.isPalindrome()); // false
+
 console.log(myString.isUpperCase()); // false
 
 
