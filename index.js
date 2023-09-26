@@ -1,16 +1,22 @@
-function isPalindrome(string){
-    let reverse = ''
-    for(let i = string.length - 1; i >= 0; i--){
-        reverse += string[i]
+class easyString{
+    constructor(string){
+        this.string = string
     }
-    return string === reverse
-}
-
-function reverseString(string){
-    return string.split('').reverse().join('')
+    reverse(){
+        return this.string.split('').reverse().join('')
+    }
+    isPalindrome(){
+        let reverse = ''
+        for(let i = this.string.length - 1; i >= 0; i--){
+            reverse += this.string[i]
+        }
+        return this.string === reverse
+    }
 }
 
 module.exports = {
-    reverseString,
-    isPalindrome
+    easyString
 }
+
+// npm version patch
+// npm publish
