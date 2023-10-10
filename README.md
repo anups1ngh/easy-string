@@ -13,18 +13,14 @@ npm i stringbuddy
 ## Usages
 
 ```js
-const { easyString } = require('stringbuddy');
+const { StringBuddy } = require('stringbuddy');
 
-// Create an EasyString instance
+// Create a StringBuddy instance
+const myString = new StringBuddy('Hello, World!');
 
-const myString = new easyString('Hello, World!');
-
-// Example usage of EasyString methods
-
+// Example usage of StringBuddy methods
 console.log(myString.reverse()); // "!dlroW ,olleH"
-
 console.log(myString.isPalindrome()); // false
-
 console.log(myString.isUpperCase()); // false
 ```
 
@@ -42,7 +38,7 @@ EasyString provides a wide range of methods to manipulate and validate strings. 
 
 - `isPhone()`: Check if the string represents a valid phone number.
 
-- `isStrongPassword()`: Check if the string is a strong password (at least 8 characters and includes '!' symbol).
+- `isStrongPassword()`: Check if the string is a strong password (at least 8 characters and includes special characters).
 
 - `isAlphaNumeric()`: Check if the string consists of alphanumeric characters.
 
