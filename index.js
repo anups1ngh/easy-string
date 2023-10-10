@@ -1,82 +1,109 @@
-class easyString{
-    constructor(string){
-        this.string = string
+class StringBuddy {
+    constructor(string) {
+      if (typeof string !== 'string') {
+        throw new Error('Input must be a string');
+      }
+      this.string = string;
     }
-    setString(string){
-        this.string = string
+  
+    setString(string) {
+      if (typeof string !== 'string') {
+        throw new Error('Input must be a string');
+      }
+      this.string = string;
     }
-    reverse(){
-        return this.string.split('').reverse().join('')
+  
+    reverse() {
+      return this.string.split('').reverse().join('');
     }
-    isPalindrome(){
-        let reverse = ''
-        for(let i = this.string.length - 1; i >= 0; i--){
-            reverse += this.string[i]
-        }
-        return this.string === reverse
+  
+    isPalindrome() {
+      const reversed = this.reverse();
+      return this.string === reversed;
     }
-    isAnagram(str){
-        return this.string.split('').sort().join('') === str.split('').sort().join('')
+  
+    isAnagram(str) {
+      if (typeof str !== 'string') {
+        throw new Error('Input must be a string');
+      }
+  
+      const sortedThis = this.string.split('').sort().join('');
+      const sortedStr = str.split('').sort().join('');
+  
+      return sortedThis === sortedStr;
     }
-    isEmail(){
-        return this.string.includes('@')
+  
+    isEmail() {
+      return this.string.includes('@');
     }
-    isPhone(){
-        return this.string.length === 10
+  
+    isPhone() {
+      return /^\d{10}$/.test(this.string);
     }
-    isStrongPassword(){
-        return this.string.length >= 8 && this.string.includes('!')
+  
+    isStrongPassword() {
+      return /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@!#$%^&*()_+])[A-Za-z\d@!#$%^&*()_+]{8,}$/.test(this.string);
     }
-    isWeekPassword(){
-        return this.string.length < 8
+  
+    isWeakPassword() {
+      return this.string.length < 8;
     }
-    isNumber(){
-        return !isNaN(this.string)
+  
+    isNumber() {
+      return !isNaN(this.string);
     }
-    isAlphaNumeric(){
-        return !this.string.match(/^[0-9a-z]+$/i)
+  
+    isAlphaNumeric() {
+      return /^[0-9a-zA-Z]+$/.test(this.string);
     }
-    isLowerCase(){
-        return this.string === this.string.toLowerCase()
+  
+    isLowerCase() {
+      return this.string === this.string.toLowerCase();
     }
-    isUpperCase(){
-        return this.string === this.string.toUpperCase()
+  
+    isUpperCase() {
+      return this.string === this.string.toUpperCase();
     }
-    isCapitalized(){
-        return this.string[0] === this.string[0].toUpperCase()
+  
+    isCapitalized() {
+      return /^[A-Z]/.test(this.string);
     }
-    isVowel(){
-        return this.string.match(/[aeiou]/gi)
+  
+    isVowel() {
+      return /[aeiouAEIOU]/.test(this.string);
     }
-    isConsonant(){
-        return this.string.match(/[bcdfghjklmnpqrstvwxyz]/gi)
+  
+    isConsonant() {
+      return /[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]/.test(this.string);
     }
-    isSpecialCharacter(){
-        return this.string.match(/[^a-zA-Z0-9]/gi)
+  
+    isSpecialCharacter() {
+      return /[^a-zA-Z0-9\s]/.test(this.string);
     }
-    isSpace(){
-        return this.string.match(/\s/gi)
+  
+    isSpace() {
+      return /\s/.test(this.string);
     }
-    isBinary(){
-        return this.string.match(/^[0-1]+$/)
+  
+    isBinary() {
+      return /^[01]+$/.test(this.string);
     }
-    isOctal(){
-        return this.string.match(/^[0-7]+$/)
+  
+    isOctal() {
+      return /^[0-7]+$/.test(this.string);
     }
-    isHexadecimal(){
-        return this.string.match(/^[0-9a-f]+$/i)
+  
+    isHexadecimal() {
+      return /^[0-9a-fA-F]+$/.test(this.string);
     }
-    isURL(){
-        return this.string.match(/^(http|https):\/\/[^ "]+$/)
+  
+    isURL() {
+      return /^(http|https):\/\/[^ "]+$/.test(this.string);
     }
-    isDate(){
-        return this.string.match(/^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$/)
+  
+    isDate() {
+      return /^(0[1-9]|1[0-2])\/(0[1-9]|[1-2][0-9]|3[0-1])\/\d{4}$/.test(this.string);
     }
 }
-
-module.exports = {
-    easyString
-}
-
-// npm version patch
-// npm publish
+  
+module.exports = StringBuddy;
